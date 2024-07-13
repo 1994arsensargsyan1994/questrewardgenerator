@@ -41,7 +41,6 @@ public class QuestRewardGeneratorTest {
     }
 
     @Test
-    @SuppressWarnings("all")
     public void testQuestRewardGeneratorInvalidParameters() {
         Assert.assertThrows(IllegalArgumentException.class,
                 () -> QuestRewardGenerator.generateRewards(-1));
