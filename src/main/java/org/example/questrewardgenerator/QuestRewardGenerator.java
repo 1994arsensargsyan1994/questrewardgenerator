@@ -10,20 +10,14 @@ public final class QuestRewardGenerator {
             throw new IllegalArgumentException("N must be between 1 and 10000 inclusive");
         }
         Probability probability = new Probability(N);
-        StringBuilder rewardString = new StringBuilder();
+        StringBuilder rewardString = new StringBuilder("b");
 
-        for (int i = 0; i < N; i++) {
-            if (i == 0) {
-                rewardString.append('b');
-            } else if (i == N - 1) {
-                rewardString.append('s');
+        for (int i = 1; i < N; i++) {
+            int number = probability.generateProbability(N, i + 1);
+            if (number < N / 2) {
+                rewardString.append(BRONZE);
             } else {
-                int number = probability.generateProbability(N, i + 1);
-                if (number < N / 2) {
-                    rewardString.append(BRONZE);
-                } else {
-                    rewardString.append(SILVER);
-                }
+                rewardString.append(SILVER);
             }
         }
 
