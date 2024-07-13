@@ -25,7 +25,7 @@ public class Probability {
      * @param bound The upper bound (exclusive) for the generated random number.
      * @return A pseudo-random integer within the range [0, bound).
      */
-    public int number(int bound) {
+    public int number(final int bound) {
         seed = (MULTIPLIER * seed + INCREMENTER) % MODULATOR;
         return (int) (seed % bound);
     }
@@ -40,8 +40,8 @@ public class Probability {
      * @param rangeStart        The starting point of the range within which weighted probabilities are applied.
      * @return A probability (number) integer within the specified range.
      */
-    public int generateProbability(int maxValueExclusive, int rangeStart) {
-        int number = number(maxValueExclusive);
+    public int generateProbability(final int maxValueExclusive, final int rangeStart) {
+        final int number = number(maxValueExclusive);
 
         if (number < maxValueExclusive - rangeStart) {
             return number(rangeStart);
