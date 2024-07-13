@@ -3,7 +3,7 @@ package org.example.questrewardgenerator;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.time.ZonedDateTime;
+import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.HashSet;
 import java.util.Set;
@@ -34,9 +34,9 @@ public class QuestRewardGeneratorTest {
 
     @Test
     public void testQuestRewardGeneratorPerformance() {
-        final ZonedDateTime now = ZonedDateTime.now();
+        final LocalDateTime now = LocalDateTime.now();
         QuestRewardGenerator.generateRewards(10000);
-        final long millis = now.until(ZonedDateTime.now(), ChronoUnit.MILLIS);
+        final long millis = now.until(LocalDateTime.now(), ChronoUnit.MILLIS);
         System.out.println("execution time whit millis: " + millis);
     }
 
