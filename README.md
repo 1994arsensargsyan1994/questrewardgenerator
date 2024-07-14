@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Quest Reward Generator is a Java utility that generates random reward strings based on given parameters.
+The Quest Reward Generator is a Java utility that generates reward strings based on given parameters.
 This README provides an overview of how to use the generator and its capabilities.
 
 ## Getting Started
